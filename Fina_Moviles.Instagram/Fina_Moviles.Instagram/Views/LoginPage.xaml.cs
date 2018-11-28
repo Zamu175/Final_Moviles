@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Newtonsoft.Json;
 using Fina_Moviles.Instagram.Model;
+using Fina_Moviles.Instagram.Resources;
 using System.Text;
 
 namespace Fina_Moviles.Instagram.Views
@@ -21,19 +22,19 @@ namespace Fina_Moviles.Instagram.Views
             var usuario = Usuario.Text;
             var password = Password.Text;
 
-            //if (string.IsNullOrEmpty(usuario))
-            //{
-            //    await DisplayAlert("Validación", AppResources.ValidacionUsuario, "OK");
-            //    Usuario.Focus();
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(usuario))
+            {
+                await DisplayAlert("Validación", AppResources.ValidacionUsuario, "OK");
+                Usuario.Focus();
+                return;
+            }
 
-            //if (string.IsNullOrEmpty(password))
-            //{
-            //    await DisplayAlert("Validación", AppResources.ValidacionContrasena, "OK");
-            //    Usuario.Focus();
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(password))
+            {
+                await DisplayAlert("Validación", AppResources.ValidacionContrasena, "OK");
+                Usuario.Focus();
+                return;
+            }
 
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://misapis.azurewebsites.net");
