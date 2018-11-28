@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Fina_Moviles.Instagram.Views.LoginPage"
-             Title="Principal">
-    <ListView x:Name="ppal">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+              NavigationPage.HasNavigationBar="False"
+             xmlns:tdr="clr-namespace:Cinema.Helpers" BackgroundColor="#F2F1F2">
+
+    <StackLayout Orientation="Vertical" VerticalOptions="Center">
+        <Label FontSize="38" Text="Instagram" FontFamily="Billabong" 
+               FontAttributes="Bold" HorizontalOptions="Center"/>
+        <Entry x:Name="Usuario" Placeholder="Usuario" />
+        <Entry x:Name="Password" Placeholder="Contrasena" IsPassword="True" />
+        <Button Text="Ingresar" Clicked="Ingresar_Click" />
+    </StackLayout>
 </ContentPage>
